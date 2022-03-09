@@ -1,0 +1,16 @@
+nazwa,waga_od,waga_do,pojemnosc_od,pojemnosc_do
+Katalizatory, 10, 20, 100, 400
+Lodowki, 5, 100, 10, 100
+Puszki, 1, 10, 10, 100
+Kable, 1, 2, 15, 25
+Koszyki, 15, 25, 50, 100
+Lom, 1, 2, 5, 10
+Prety_zbrojeniowe, 5, 25, 10, 60
+Szyny_kolejowe, 5, 20, 15, 50
+Znaki_drogowe, 2, 10, 5, 25
+Metalowe_wlazy, 25, 30, 15, 20
+Lawki, 10, 15, 10, 20
+Rowery, 2, 5, 30, 40
+Felgi_amaliniowe, 10, 15, 50, 60
+Lancuchy, 2, 7, 5, 10
+Akumulatory, 15, 30, 200, 300
