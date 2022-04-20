@@ -18,7 +18,7 @@ class Wiesiu():
         self.pozycja=Pozycja2d(0,0)
         self.przebieg = 0
         self.inv = []
-        self.historia = []
+        self.historia= []
 
     def podniesZlom(self, Zlom):
         #wiesiu: sprawdzam czy dam rade go podniesc
@@ -72,35 +72,55 @@ for row in csvreader:
 file.close()
 
 
-#narodziny wieslawa
-wieski = []
-for i in range(0,10):
-    wieski.append(Wiesiu(100,1000))
 
 
+hm = []
+hms = 10
 
-for i in range(0,10):
-    print("----------------------------")
-    #zbieranie zlomu
-    while(dane.__len__()>0):
-        for i in range(0,10):
-            los = random.randrange(0,dane.__len__(),1)
-            if (wieski[0].podniesZlom(dane[los])):
+danei = []
+
+
+for i in range(0,hms):
+    #narodziny wieslawa
+    wieski = Wiesiu(100,1000)
+
+    danei = dane.copy()
     
-                dane.pop(los)
-            if(dane.__len__()==0):
+    
+    #zbieranie zlomu
+    while(danei.__len__()>0):
+        for i in range(0,10):
+            los = random.randrange(0,danei.__len__(),1)
+            if (wieski.podniesZlom(danei[los])):
+    
+                danei.pop(los)
+            if(danei.__len__()==0):
                 break
     
-        wieski[0].sprzedajZlom()
+        wieski.sprzedajZlom()
     
     
     #wyswietlanie
-    print("\nprzebieg: "+str(wieski[0].przebieg))
     
-    for row in wieski[0].historia:
-        for val in row:
+    hm.append(wieski.historia.copy())
+    #print("\nprzebieg: "+str(wieski.przebieg))
+    #for row in wieski.historia:
+    #    for val in row:
+    #        print(val.nazwa+" "+str(val.waga))
+    #    print("\n")
+    
+    #smierc wieslawa
+    del wieski
+    
+for qw in hm:
+    print("----------------------------")
+    for dd in qw:
+        for val in dd:
             print(val.nazwa+" "+str(val.waga))
         print("\n")
+    
+    
+    
     
 
 
