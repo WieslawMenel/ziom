@@ -73,29 +73,35 @@ file.close()
 
 
 #narodziny wieslawa
-wieslaw = Wiesiu(100,1000)
-
-#zbieranie zlomu
-while(dane.__len__()>0):
-    for i in range(0,10):
-        los = random.randrange(0,dane.__len__(),1)
-        if (wieslaw.podniesZlom(dane[los])):
-
-            dane.pop(los)
-        if(dane.__len__()==0):
-            break
-
-    wieslaw.sprzedajZlom()
+wieski = []
+for i in range(0,10):
+    wieski.append(Wiesiu(100,1000))
 
 
-#wyswietlanie
-print("\nprzebieg: "+str(wieslaw.przebieg))
 
-for row in wieslaw.historia:
-    for val in row:
-        print(val.nazwa+" "+str(val.waga))
-    print("\n")
-
+for i in range(0,10):
+    print("----------------------------")
+    #zbieranie zlomu
+    while(dane.__len__()>0):
+        for i in range(0,10):
+            los = random.randrange(0,dane.__len__(),1)
+            if (wieski[0].podniesZlom(dane[los])):
+    
+                dane.pop(los)
+            if(dane.__len__()==0):
+                break
+    
+        wieski[0].sprzedajZlom()
+    
+    
+    #wyswietlanie
+    print("\nprzebieg: "+str(wieski[0].przebieg))
+    
+    for row in wieski[0].historia:
+        for val in row:
+            print(val.nazwa+" "+str(val.waga))
+        print("\n")
+    
 
 
 
